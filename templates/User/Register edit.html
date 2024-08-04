@@ -1,0 +1,126 @@
+{% extends 'User/index2.html' %}
+{% block body %}
+
+<html>
+<head>
+    <title>Online Admission</title>
+    <style>
+        input[type='text'],input[type='file']{
+         background-color: #f6f6f6;
+            padding: 5px;
+            text-decoration: none;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+        select{
+         background-color: #f6f6f6;
+            padding: 5px;
+            text-decoration: none;
+            border: 2px solid black;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="col-12">
+
+        <div class="col-12">
+            <div class="col-12">
+                <h2>Update Profile</h2>
+                <hr class="divider" />
+
+                <form action="/Register_edit_post" method="post" class="form text-center" enctype="multipart/form-data">
+                    <table class="table-borderless">
+                        <tr>
+                            <th>Address</th>
+                            <td><input type="hidden" name="id" value="{{ data['Student_id'] }}"/></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="ad1" value=" {{ data['Add1'] }}"></td>
+                            <td><input type="text" name="ad3" value="{{ data['Add3'] }}"></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="ad4" value="{{ data['Add4'] }}" "></td>
+                        </tr>
+                        <tr>
+                            <th>Post office</th>
+                            <th>Pin code</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="post" value="{{ data['Post'] }}"></td>
+                            <td><input type="text" name="pin" value="{{ data['Pin'] }}"></td>
+                        </tr>
+                        <tr>
+                            <th>Gender</th>
+                            <th>Qualification</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select name="gender">
+                                    <option hidden>{{ data['Gender'] }}</option>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                            </td>
+                            <td>
+                                <select name="qual">
+                                    <option hidden>{{ data['Qualification'] }}</option>
+                                    <option>+2 DHSE</option>
+                                    <option>+2 VHSE</option>
+                                    <option>+2 CBSE</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>SSLC BOOK</th>
+                            <th>SSLC Percentage</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="file" name="sslc"/>
+                            </td>
+                            <td>
+                                <input type="text"  name="sslc_per" value="{{ data['SSLC_Percentage'] }}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>+2 Marklist</th>
+                            <th>+2 Percentage</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="file" name="plus2" "/>
+                            </td>
+                            <td>
+                                <input type="text" name="plus2_per" value="{{ data['+2_Percentage'] }}"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Photo</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="file" name="photo" />
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" align="center">
+                                <input type="submit" value="UPDATE" class="btn">
+                            </td>
+                        </tr>
+                    </table>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+
+{% endblock %}

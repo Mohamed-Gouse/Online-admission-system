@@ -1,0 +1,30 @@
+{% extends 'Admin/index2.html' %}
+{% block body  %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/Rules_edit_post" enctype="multipart/form-data">
+  <h1 class="text-drak font-weight-bold">Edit Rules</h1>
+    <hr class="divider" />
+    <table class="table-bordered text-center">
+    <input type="hidden" name="rules_id" value="{{ data['rules_id'] }}"/>
+
+    <tr>
+      <th>Prospectus</th>
+      <td><label for="fileField"></label>
+        <input name="fileField" type="file" id="fileField"  class="form-control"/></td>
+    </tr>
+    <tr>
+      <td colspan="2"align="right"><input type="submit" name="button" id="button" value="Update" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

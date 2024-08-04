@@ -1,0 +1,52 @@
+{% extends 'Admin/index2.html' %}
+{% block body %}
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action="/Search_approval">
+        <h1 class="text-drak font-weight-bold">Approved applications</h1>
+    <hr class="divider" />
+    <table class="table-bordered text-center">
+            <tr>
+                <th>From</th>
+                <td><input type="date" name="from" class="form-control"></td>
+                <th>To</th>
+                <td><input type="date" name="to" class="form-control"></td>
+                <td><input type="submit" value="Search" class="form-control"></td>
+            </tr>
+        </table>
+        <hr class="divider" />
+    <table class="table-bordered text-center">
+            <tr>
+                <th>Sl.No</th>
+                <th>Date</th>
+                <th>Course</th>
+                <th>Student</th>
+                <th>Cap_id</th>
+                <th>Status</th>
+
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ i['date'] }}</td>
+                <td>{{ i['C_name'] }}</td>
+                <td><a href="/Student_detail/{{ i['Login_id'] }}" >{{ i['S_name'] }}</a></td>
+                <td>{{ i['Cap_id'] }}</td>
+                <td>{{ i['Status'] }}</td>
+
+            </tr>
+            {% endfor %}
+        </table>
+    <a href="/Admin_home">Goto Homepage</a>
+    </form>
+</body>
+</html>
+{% endblock %}

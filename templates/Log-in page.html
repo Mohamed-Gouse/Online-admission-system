@@ -1,0 +1,328 @@
+<html>
+
+<head>
+    <title>Online Admission</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <style>
+        /* BASIC */
+
+        html {
+            background-color: #56baed;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            height: 100vh;
+        }
+
+        a {
+            color: black;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            margin: 40px 8px 10px 8px;
+            color: #cccccc;
+        }
+
+
+
+        /* STRUCTURE */
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            min-height: 100%;
+            padding: 20px;
+
+        }
+
+
+
+        #formContent {
+            -webkit-border-radius: 10px 10px 10px 10px;
+            border-radius: 10px 10px 10px 10px;
+            background: #006774;
+            padding: 30px;
+            width: 100%;
+            max-width: 550px;
+            position: relative;
+            padding: 0px;
+            box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+        #formFooter {
+            background-color: #f6f6f6;
+            border-top: 1px solid #dce8f1;
+            padding: 25px;
+            text-align: center;
+            -webkit-border-radius: 0 0 10px 10px;
+            border-radius: 0 0 10px 10px;
+            color: rgb(0, 0, 0);
+        }
+
+
+
+        /* TABS */
+
+        h2.inactive {
+            color: #cccccc;
+        }
+
+        h2.active {
+            color: #0d0d0d;
+            border-bottom: 2px solid #5fbae9;
+        }
+
+
+
+        /* FORM TYPOGRAPHY*/
+
+        input[type=button],
+        input[type=submit],
+        input[type=reset] {
+            background-color: #000000;
+            border: none;
+            color: rgb(255, 255, 255);
+            padding: 15px 80px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 13px;
+            -webkit-box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+            box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+            border-radius: 5px 5px 5px 5px;
+            margin: 5px 20px 40px 20px;
+
+        }
+
+        input[type=button]:hover,
+        input[type=submit]:hover,
+        input[type=reset]:hover {
+            background-color: #ffffff;
+            color: black;
+        }
+
+        input[type=text] {
+            background-color: #f6f6f6;
+            border: none;
+            color: #0d0d0d;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 5px;
+            width: 85%;
+            border: 2px solid #f6f6f6;
+            border-radius: 5px 5px 5px 5px;
+        }
+
+        input[type=text]:focus {
+            border-bottom: 2px solid #5fbae9;
+        }
+
+
+
+        input[type=password] {
+            background-color: #f6f6f6;
+            border: none;
+            color: #0d0d0d;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 5px;
+            width: 85%;
+            border: 2px solid #f6f6f6;
+            border-radius: 5px 5px 5px 5px;
+        }
+
+        input[type=password]:focus {
+            border-bottom: 2px solid #5fbae9;
+        }
+
+
+
+
+
+
+        /* ANIMATIONS */
+
+        /* Simple CSS3 Fade-in-down Animation */
+        .fadeInDown {
+            -webkit-animation-name: fadeInDown;
+            animation-name: fadeInDown;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+
+        @-webkit-keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(0, -100%, 0);
+                transform: translate3d(0, -100%, 0);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(0, -100%, 0);
+                transform: translate3d(0, -100%, 0);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+
+        /* Simple CSS3 Fade-in Animation */
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fadeIn {
+            opacity: 0;
+            -webkit-animation: fadeIn ease-in 1;
+            -moz-animation: fadeIn ease-in 1;
+            animation: fadeIn ease-in 1;
+
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+
+            -webkit-animation-duration: 1s;
+            -moz-animation-duration: 1s;
+            animation-duration: 1s;
+        }
+
+
+        .underlineHover:hover {
+            color: #0066ff;
+        }
+
+        .underlineHover:hover:after {
+            width: 100%;
+        }
+
+        #sign {
+            padding-bottom: 2%;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+        }
+
+        #sign:hover {
+            color: #ffffff;
+        }
+
+        #bdy {
+            background: linear-gradient(to bottom, rgba(229, 229, 229, 0.8) 0%, rgba(100, 100, 100, 0.8) 100%), url('/static/bg/khidmath.jpg');
+            min-height: 100%;
+            min-width: 100%;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            overflow-y: hidden;
+            overflow-x: hidden;
+        }
+
+
+        /* OTHERS */
+
+        *:focus {
+            outline: none;
+        }
+
+        #icon {
+            width: 70%;
+            padding-top: 1em;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="bdy">
+        <div class="wrapper fadeInDown">
+
+            <div id="formContent" class="col-12">
+                <!-- Tabs Titles -->
+
+                <!-- Icon -->
+                <div class="fadeIn first">
+                    <img src="../static/bg/logo.png" id="icon" alt="User Icon" />
+                </div>
+
+                <!-- Login Form -->
+                <form id="form1" name="form1" method="post" action="/Login_post">
+                    Username
+                    <input type="text" name="textfield" id="textfield" placeholder="E-mail ID"/>
+                    Password
+                    <input type="password" name="textfield2" id="textfield2" placeholder="YYYY-MM-DD"/>
+                    <br><br>
+                    <input type="submit" name="button" id="button" value="Log-in" />
+                </form>
+                <a id="sign" href="/Student">Sign-up</a>
+
+                <!-- Remind Passowrd -->
+                <div id="formFooter">
+                    <a class="underlineHover" href="/forget_pass">Forgot Password?</a>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

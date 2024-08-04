@@ -1,0 +1,30 @@
+{% extends 'Admin/index2.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="" method="post">
+    <table class="table-bordered text-center">
+        <tr>
+            <td>Sl.No</td>
+            <td>Date of Payment</td>
+            <td>Account number</td>
+            <td>Amount</td>
+        </tr>
+        {% for i in data %}
+        <tr>
+            <td>{{ loop.index }}</td>
+            <td>{{ i['p_date'] }}</td>
+            <td>{{ i['account_number'] }}</td>
+            <td>{{ i['amount'] }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</form>
+</body>
+</html>
+{% endblock %}

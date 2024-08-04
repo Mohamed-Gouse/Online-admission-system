@@ -1,0 +1,153 @@
+<html>
+
+<head>
+    <title>Online Admission</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="icon" href="\static\bg\icon.png">
+    <style>
+        #logo{
+            width: 50%;
+        }
+        .btn:hover{
+            background-color: transparent;
+{#            color: black;#}
+        }
+        
+        tr,th,td{
+            padding-top: 1em;
+            padding-bottom: 1em;
+            padding-left: 5em;
+            padding-right: 5em;
+            border-color: black;
+        }
+        #pending{
+            padding-top: 2em;
+            padding-bottom: 2em;
+        }
+        .hdng{
+            padding-bottom: 1em;
+        }
+        .btn{
+            background-color: transparent;
+            color: white;
+        }
+        .but:hover{
+            background-color: #0066ff;
+        }
+    </style>
+</head>
+
+<body style="margin: auto;">
+    <header style="position:fixed; width: 100%; z-index: 1; background-color: #006774">
+        <div class="row" style="margin-right: 0px; margin-left: 0px;">
+            <div class="col-9 col-md-6  text-light pl-4">
+                <a style="text-decoration: none; color: rgba(255, 255, 255, 0.63);" href="#">
+                    <img id="logo" src="/static/Img/logo.png" alt="">
+                </a>
+            </div>
+            <div class="col-3 col-md-6 my-auto">
+                <nav class="navbar navbar-expand-xl navbar-light">
+                    <button class="navbar-toggler ml-auto" type="button" data-toggle="collapse"
+                        data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link text-light" href="/Admin_home">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button class="btn dropdown-toggle" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        Application
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="/Course_application#tab">View application</a>
+                                        <a class="dropdown-item" href="/Approved_application#tab">Approved application</a>
+                                        <a class="dropdown-item" href="/Rejected_application#tab">Rejected application</a>
+                                        <a class="dropdown-item" href="/Paid_application#tab">Paid application</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button class="btn  dropdown-toggle " type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        Course
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="/Course_add#tab">Add Course</a>
+                                        <a class="dropdown-item" href="/Course_view#tab">View Course</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button class="btn  dropdown-toggle" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        Rules
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="/Rules_add#tab">Add Rules</a>
+                                        <a class="dropdown-item" href="/Rules_view#tab">View Rules</a>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <div class="dropdown">
+                                    <button class="btn  dropdown-toggle" type="button"
+                                        id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                        aria-expanded="false">
+                                        Vacancy
+                                    </button>
+                                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                        <a class="dropdown-item" href="/Vacancy_add#tab">Add Vacancy</a>
+                                        <a class="dropdown-item" href="/Vacancy_view#tab">View Vacancy</a>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" >
+        <div class="container col-12 h-100" style="padding-top: 10rem; padding-bottom: calc(10rem - 4.5rem);
+        background: linear-gradient(to bottom, rgba(94, 94, 94, 0.645) 0%, rgba(255, 255, 255, 0.519) 100%), url('/static/Img/khidmath.jpg');
+        background-position: center;
+        background-repeat: no-repeat;
+        background-attachment: scroll;
+        background-size: cover;">
+            <div class="row col-12 h-100 align-items-center justify-content-center text-center">
+                <div class="align-self-end">
+                    <h1 class="text-drak font-weight-bold">Online Admission Managment Platform</h1>
+                    <hr class="divider" />
+                </div>
+                <div class="align-self-baseline">
+                    <p class="text-drak font-weight-bold">KHIDMATH ARTS AND SCIENCE COLLEGE was established in May, 2005 as a self-financing college affiliated to the University of Calicut</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+{% extends 'User/index2.html' %}
+{% block body %}
+{#<!DOCTYPE html>#}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <form method="post" action="/Search_myapplication">
+        <h1 class="text-dark font-weight-bold">Application</h1>
+    <hr class="divider" />
+    <table class="table-bordered text-center">
+            <tr>
+                <th>From</th>
+                <td><input type="date" name="from" class="form-control"></td>
+                <th>To</th>
+                <td><input type="date" name="to" class="form-control"></td>
+                <td><input type="submit" value="Search" class="form-control"></td>
+            </tr>
+        </table><br>
+        <table class="table-bordered text-center">
+            <tr>
+                <td>Sl.No</td>
+                <td>Date</td>
+                <td>Course</td>
+                <td>Cap_id</td>
+                <td>Status</td>
+                <td>Payment</td>
+            </tr>
+            {% for i in data %}
+            <tr>
+                <td>{{ loop.index }}</td>
+                <td>{{ i['date'] }}</td>
+                <td>{{ i['C_name'] }}</td>
+                <td>{{ i['Cap_id'] }}</td>
+                <td>{{ i['Status'] }}</td>
+                <td>
+                    {% if i['Status']=='Approved' and data_1==None %}
+                    <a href="/Make_payment/{{ i['Application_id'] }}">Pay now</a>
+                        {% elif i['Status']=='Rejected' %}
+                        Can't be paid
+                    {% else %}
+                        {{ status }}
+                    {% endif %}
+                </td>
+            </tr>
+            {% endfor %}
+        </table>
+    <a href="/Student_home">Goto Homepage</a>
+    </form>
+</body>
+</html>
+{% endblock %}

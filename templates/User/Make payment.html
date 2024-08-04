@@ -1,0 +1,56 @@
+{% extends 'User/index2.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/Challan">
+  <h1 class="text-drak font-weight-bold">Challan
+  </h1>
+    <hr class="divider" />
+    <table class="table-bordered text-center">
+    <tr>
+      <td>Amount</td>
+      <td>
+          <input type="hidden" value="{{ data['Application_id'] }}" name="id"/>
+          <input type="text" readonly value="{{ data['fee'] }}" name="amount"/></td>
+    </tr>
+    <tr>
+      <td>Account</td>
+      <td><input type="text" name="account"/></td>
+    </tr>
+    <tr>
+      <td>IFSC CODE</td>
+      <td><input type="text" name="ifsc"/></td>
+    </tr>
+    <tr>
+      <td>Card number</td>
+      <td><input type="text" name="card"/></td>
+    </tr>
+    <tr>
+      <td>CVV</td>
+      <td><input type="text" name="cvv"/></td>
+    </tr>
+    <tr>
+      <td>Expiry</td>
+      <td><input type="text" name="expiry"/></td>
+    </tr>
+    <tr>
+      <td>Pin</td>
+      <td><input type="text" name="pin"/></td>
+    </tr>
+
+
+
+    <tr>
+      <td colspan="2" align="right"><input type="submit" name="button" id="button" value="Pay" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

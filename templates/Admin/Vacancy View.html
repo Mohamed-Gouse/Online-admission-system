@@ -1,0 +1,38 @@
+{% extends 'Admin/index2.html' %}
+{% block body  %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <h1 class="text-drak font-weight-bold">View vacancy</h1>
+    <hr class="divider" />
+    <table class="table-bordered text-center">
+    <tr>
+      <td>Sl.No</td>
+      <td>Course Name</td>
+      <td>No.of seat</td>
+      <td></td>
+    </tr>
+    <tr>
+        {% for i in data %}
+      <td>{{ loop.index }}</td>
+      <td>{{ i['Name'] }}</td>
+      <td>{{ i['Vacant_seat'] }}</td>
+      <td><a href="Vacancy_edit/{{ i['Vacancy_id'] }}#tab">Edit</a> <a href="Vacancy_delete/{{ i['Vacancy_id'] }}" onclick="return confirm('Are you sure...?')">Delete</a></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="4" align="right"><a href="/Vacancy_add#tab">Add</a></td>
+    </tr>
+  </table>
+<a href="/Admin_home">Goto Homepage</a>
+</form>
+</body>
+</html>
+{% endblock %}

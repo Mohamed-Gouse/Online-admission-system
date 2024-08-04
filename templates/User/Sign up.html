@@ -1,0 +1,393 @@
+<html>
+
+<head>
+    <title>Online Admission</title>
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!------ Include the above in your HEAD tag ---------->
+    <style>
+        /* BASIC */
+
+        html {
+            background-color: #56baed;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            height: 100vh;
+        }
+
+        a {
+            color: black;
+            display: inline-block;
+            text-decoration: none;
+            font-weight: 400;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 16px;
+            font-weight: 600;
+            text-transform: uppercase;
+            display: inline-block;
+            margin: 40px 8px 10px 8px;
+            color: #cccccc;
+        }
+
+
+
+        /* STRUCTURE */
+
+        .wrapper {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            width: 100%;
+            min-height: 100%;
+            padding: 20px;
+
+        }
+
+
+
+        #formContent {
+{#            color: white;#}
+            -webkit-border-radius: 10px 10px 10px 10px;
+            border-radius: 10px 10px 10px 10px;
+            background: #006774;
+            padding: 30px;
+            width: 70%;
+{#            max-width: 550px;#}
+            position: relative;
+            padding: 0px;
+            box-shadow: 0 30px 60px 0 rgba(0, 0, 0, 0.3);
+            text-align: center;
+        }
+
+
+
+
+        /* TABS */
+
+        h2.inactive {
+            color: #cccccc;
+        }
+
+        h2.active {
+            color: #0d0d0d;
+            border-bottom: 2px solid #5fbae9;
+        }
+
+
+
+        /* FORM TYPOGRAPHY*/
+
+        input[type=button],
+        input[type=submit],
+        input[type=reset] {
+            background-color: #000000;
+            border: none;
+            color: rgb(255, 255, 255);
+            padding: 15px 80px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 13px;
+            -webkit-box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+            box-shadow: 0 10px 30px 0 rgba(95, 186, 233, 0.4);
+            border-radius: 5px 5px 5px 5px;
+            margin: 5px 20px 40px 20px;
+
+        }
+
+        input[type=button]:hover,
+        input[type=submit]:hover,
+        input[type=reset]:hover {
+            background-color: #ffffff;
+            color: black;
+        }
+
+
+
+        input[type=text],input[type=email],input[type=tel],select,input[type=file],input[type=date] {
+            background-color: #f6f6f6;
+            border: none;
+            color: #0d0d0d;
+            padding: 10px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin: 5px;
+            width: 320px;
+            border: 2px solid #f6f6f6;
+            border-radius: 5px 5px 5px 5px;
+        }
+
+        input[type=password]:focus,input[type=email]:focus,input[type=tel]:focus,select:focus,input[type=file]:focus {
+            border-bottom: 2px solid #5fbae9;
+        }
+
+
+
+
+
+
+        /* ANIMATIONS */
+
+        /* Simple CSS3 Fade-in-down Animation */
+        .fadeInDown {
+            -webkit-animation-name: fadeInDown;
+            animation-name: fadeInDown;
+            -webkit-animation-duration: 1s;
+            animation-duration: 1s;
+            -webkit-animation-fill-mode: both;
+            animation-fill-mode: both;
+        }
+
+        @-webkit-keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(0, -100%, 0);
+                transform: translate3d(0, -100%, 0);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                -webkit-transform: translate3d(0, -100%, 0);
+                transform: translate3d(0, -100%, 0);
+            }
+
+            100% {
+                opacity: 1;
+                -webkit-transform: none;
+                transform: none;
+            }
+        }
+
+        /* Simple CSS3 Fade-in Animation */
+        @-webkit-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @-moz-keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        .fadeIn {
+            opacity: 0;
+            -webkit-animation: fadeIn ease-in 1;
+            -moz-animation: fadeIn ease-in 1;
+            animation: fadeIn ease-in 1;
+
+            -webkit-animation-fill-mode: forwards;
+            -moz-animation-fill-mode: forwards;
+            animation-fill-mode: forwards;
+
+            -webkit-animation-duration: 1s;
+            -moz-animation-duration: 1s;
+            animation-duration: 1s;
+        }
+
+
+{#        .underlineHover:hover {#}
+{#            color: #0066ff;#}
+{#        }#}
+
+{#        .underlineHover:hover:after {#}
+{#            width: 100%;#}
+{#        }#}
+{##}
+{#        #sign {#}
+{#            padding-bottom: 2%;#}
+{#            text-decoration: none;#}
+{#            color: rgb(0, 0, 0);#}
+{#        }#}
+{##}
+{#        #sign:hover {#}
+{#            color: #ffffff;#}
+{#        }#}
+
+        #bdy {
+            background: linear-gradient(to bottom, rgba(229, 229, 229, 0.8) 0%, rgba(100, 100, 100, 0.8) 100%), url('/static/bg/khidmath.jpg');
+            min-height: 100%;
+            min-width: 100%;
+            background-size: 100% 100%;
+            background-repeat: no-repeat;
+            overflow-y: hidden;
+            overflow-x: hidden;
+
+        }
+
+
+        /* OTHERS */
+
+        *:focus {
+            outline: none;
+        }
+
+        #icon {
+            width: 25%;
+            padding-top: 1em;
+        }
+    </style>
+</head>
+
+<body>
+<center>
+    <div id="bdy">
+        <div class="wrapper fadeInDown">
+
+            <div id="formContent" class="col-12">
+                <!-- Tabs Titles -->
+
+                <!-- Icon -->
+                <div class="fadeIn first">
+                    <img src="../static/bg/logo.png" id="icon" alt="User Icon" />
+                </div>
+
+                <!-- Login Form -->
+                <form action="/Student_post" method="post" enctype="multipart/form-data" name="form1" class="form col-12 text-center">
+                    <table class="table-borderless text-white" >
+                        <tr>
+                            <th>Cap-Id</th>
+                            <th>Name</th>
+                            <th>Email</th>
+
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="cap" placeholder="Cap-ID" required></td>
+                            <td><input type="text" name="name" placeholder="Name in BLOCK letter" required></td>
+                            <td><input type="email" name="mail" placeholder="E-mail" required></td>
+                        </tr>
+                        <tr>
+                            <th>Address</th>
+                            <td></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="ad1" placeholder="Address line 1" required></td>
+                            <td><input type="text" name="ad3" placeholder="Street" required></td>
+                            <td><input type="text" name="ad4" placeholder="Town/city" required></td>
+                        </tr>
+
+                        <tr>
+                            <th>Date of Birth</th>
+                            <th>Gender</th>
+                            <th>Mobile</th>
+                        </tr>
+                        <tr>
+                            <td><input type="date" required max="{{ date }}" name="dob"></td>
+                            <td>
+                                <select name="gender" required>
+                                    <option>Male</option>
+                                    <option>Female</option>
+                                </select>
+                            </td>
+                            <td><input type="tel" name="mob" placeholder="Mobile no." required></td>
+                        </tr>
+
+                        <tr>
+                            <th>Post office</th>
+                            <th>Pin code</th>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="post" placeholder="Post office" required></td>
+                            <td><input type="text" name="pin" placeholder="Pin-code" required></td>
+                        </tr>
+                        <tr>
+
+                            <th>Qualification</th>
+                            <th>SSLC BOOK</th>
+                            <th>SSLC Percentage</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <select name="qual" required>
+                                    <option>+2 DHSE</option>
+                                    <option>+2 VHSE</option>
+                                    <option>+2 CBSE</option>
+                                </select>
+                            </td>
+                            <td>
+                                <input type="file" name="sslc" required/>
+                            </td>
+                            <td>
+                                <input type="text"  name="sslc_per" placeholder="SSLC Percentage" required/>
+                            </td>
+                        </tr>
+
+
+                        <tr>
+                            <th>+2 Marklist</th>
+                            <th>+2 Percentage</th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="file" name="plus2" required/>
+                            </td>
+                            <td>
+                                <input type="text" name="plus2_per" placeholder="+2 Percentage"  required/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>Photo</th>
+                            <th></th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <input type="file" name="photo" required/>
+                            </td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                        <tr>
+                            <td colspan="3" align="center"><input type="submit" value="Sign up" onclick="confirm('Once click ok \nCant do any changes')"></td>
+                        </tr>
+                    </table>
+
+                </form>
+
+
+                <!-- Remind Passowrd -->
+
+            </div>
+        </div>
+    </div>
+    </center>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+{% extends 'Admin/index2.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="">
+  <h1 class="text-drak font-weight-bold">View Courses</h1>
+                    <hr class="divider" />
+                    <table class="table-bordered text-center">
+
+    <tr>
+      <th width="50px">Sl.No</th>
+      <th>Course Name</th>
+      <th>Duration</th>
+      <th>Department</th>
+      <th>Semester</th>
+      <th>Description</th>
+      <th>Application fee</th>
+      <th>Syllabus</th>
+        <td></td>
+    </tr>
+        {% for i in data %}
+    <tr>
+      <td>{{ loop.index }}</td>
+      <td>{{ i['Name'] }}</td>
+      <td>{{ i['Duration'] }}</td>
+      <td>{{ i['Department'] }}</td>
+      <td>{{ i['Semester'] }}</td>
+      <td>{{ i['Description'] }}</td>
+      <td>{{ i['fee'] }}</td>
+      <td><a href="{{ i['Syllabus'] }}">Download</a> </td>
+      <td><a href="/Course_edit/{{ i['course_id'] }}#tab">Edit</a>&nbsp; <a href="/Course_delete/{{ i['course_id'] }}" onclick="return confirm('Are you sure...?')">Delete</a></td>
+    </tr>
+      {% endfor %}
+    <tr>
+      <td colspan="9" align="right"><a href="/Course_add#tab">Add</a></td>
+    </tr>
+  </table>
+<a href="/Admin_home">Goto Homepage</a>
+</form>
+</body>
+</html>
+{% endblock %}

@@ -1,0 +1,58 @@
+{% extends 'Admin/index2.html' %}
+{% block body %}
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="/Course_edit_post" enctype="multipart/form-data">
+    <h1 class="text-drak font-weight-bold">Edit Course</h1>
+                    <hr class="divider" />
+                    <table class="table-bordered text-center">
+    <tr>
+      <th>Course Name</th>
+      <td><label for="textfield"></label>
+          <input type="hidden" name="id" value="{{ data['course_id'] }}"/>
+        <input type="text" name="textfield" id="textfield" value="{{ data['Name'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th>Duration</th>
+      <td><label for="textfield2"></label>
+        <input type="text" name="textfield2" id="textfield2" value="{{ data['Duration'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th>Department</th>
+      <td><label for="textfield3"></label>
+        <input type="text" name="textfield3" id="textfield3" value="{{ data['Department'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th>Semester</th>
+      <td><label for="textfield4"></label>
+        <input type="text" name="textfield4" id="textfield4" value="{{ data['Semester'] }}" class="form-control"/></td>
+    </tr>
+    <tr>
+      <th>Syllabus</th>
+      <td><label for="fileField"></label>
+        <input name="fileField" type="file" id="fileField" class="form-control"/></td>
+    </tr>
+    <tr>
+        <th>Application fee</th>
+        <td><input type="text" name="fee" class="form-control" value="{{ data['fee'] }}"/></td>
+    </tr>
+    <tr>
+      <th>Description</th>
+      <td><label for="textarea"></label>
+          <textarea name="textarea" id="textarea" cols="21" rows="2" class="form-control">{{ data['Description'] }}</textarea></td>
+    </tr>
+    <tr>
+      <td colspan="2" align="right"><input type="submit" name="button" id="button" value="Update" /></td>
+    </tr>
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

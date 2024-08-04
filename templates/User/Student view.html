@@ -1,0 +1,86 @@
+{% extends 'User/index2.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+    <style>
+        th,td{
+            padding-left: 50px;
+            padding-right: 50px;
+        }
+    </style>
+</head>
+
+<body>
+
+<form action="/Student_post" method="post" enctype="multipart/form-data" name="form1" id="form1">
+  <h1 class="text-drak font-weight-bold">Profile</h1>
+    <hr class="divider" />
+    <table class="table-borderless">
+        <tr>
+            <td rowspan="3"><img src="{{ data['Photo'] }}" style="width: 100px;height: 150px" alt=""/></td>
+             <th colspan="2">Name :{{ data['Name'] }}</th>
+        </tr>
+        <tr>
+      <th colspan="2">Cap-id :{{ data['Cap_id'] }}</th>
+    </tr>
+        <tr>
+            <th colspan="2">Address :{{ data['Add1'] }},{{ data['Add3'] }}<br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ data['Add4'] }}</th>
+        </tr>
+
+    <tr>
+      <th>Post Office</th>
+      <th>Pin</th>
+      <th>Date of Birth</th>
+    </tr>
+    <tr>
+      <td>{{ data['Post'] }}</td>
+      <td>{{ data['Pin'] }}</td>
+      <td>{{ data['Date_of_Birth'] }}</td>
+    </tr>
+    <tr>
+        <th>Gender</th>
+        <th>Phone</th>
+        <th>Email</th>
+    </tr>
+    <tr>
+      <td>{{ data['Gender'] }}</td>
+      <td>{{ data['Phone'] }}</td>
+      <td>{{ data['Email'] }}</td>
+    </tr>
+    <tr>
+      <th>Qualification</th>
+        <th>SSLC BOOK</th>
+        <th>10th percentage</th>
+
+    </tr>
+    <tr>
+      <td>{{ data['Qualification'] }}</td>
+      <td><a href="{{ data['SSLC_Book'] }}">View</a> </td>
+        <td>{{ data['SSLC_Percentage'] }}</td>
+    </tr>
+    <tr>
+
+
+    </tr>
+    <tr>
+      <th>+2 Marklist</th>
+      <th>+2 Percentage</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td><a href="{{ data['+2_marklist'] }}">View</a> </td>
+      <td>{{ data['+2_Percentage'] }}</td>
+      <td></td>
+    </tr>
+    <tr>
+        <td colspan="3" style="text-align: right"><a href="/Register_edit/{{ data['Student_id'] }}">Edit</a> </td>
+    </tr>
+
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}

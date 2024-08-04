@@ -1,0 +1,45 @@
+{% extends 'Public/index2.html' %}
+{% block body %}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post" action="" style="padding-top: 10%">
+  <h1 class="text-drak font-weight-bold">Courses</h1>
+    <hr class="divider" />
+    <table class="table-bordered text-center">
+    <tr>
+      <td>Sl.No</td>
+      <td>Course Name</td>
+      <td>Duration</td>
+      <td>Department</td>
+      <td>Semester</td>
+      <td>Description</td>
+      <td>Syllabus</td>
+      <td>Vacancy</td>
+      <td>Application amount</td>
+
+    </tr>
+    <tr>
+        {% for i in data %}
+      <td>{{ loop.index }}</td>
+      <td>{{ i['Name'] }}</td>
+      <td>{{ i['Duration'] }}</td>
+      <td>{{ i['Department'] }}</td>
+      <td>{{ i['Semester'] }}</td>
+      <td>{{ i['Description'] }}</td>
+      <td><a href="{{ i['Syllabus'] }}">Download</a> </td>
+      <td>{{ i['Vacant_seat'] }}</td>
+      <td>{{ i['fee'] }}</td>
+    </tr>
+      {% endfor %}
+
+  </table>
+</form>
+</body>
+</html>
+{% endblock %}
